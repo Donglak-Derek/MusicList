@@ -1,0 +1,26 @@
+<div class="container">
+<p><a href="/songs">Dashboard</a></p>
+</div>
+<div class="container">
+    <h1><%= @user.full_name %>'s Playlist</h1>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <td>Artist</td>
+                <td>Title</td>
+                <td>Times Added</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% @songs.each do |song| %>
+                <tr>
+                    <td><%= Song.find_by(id: song.song_id) %></td>
+                    <td><%= Song.find_by(id: song.song_id) %></td>
+                    <td><%= song.song_id %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

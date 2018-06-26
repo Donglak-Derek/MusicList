@@ -1,0 +1,29 @@
+<div class="container">
+<p><a href="/songs">Dashboard</a></p>
+</div>
+<div class="container">
+    <h3>Others who added <%= @song.artist %> - <%= @song.title %></h3>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <td>Name</td>
+                <td>Times Added</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @users.each do |user| %>
+               <% @ids.each do |id| %>
+                <tr>
+                    <td><a href="/users/<%= id %>">
+                        <%= user %></a>
+                    </td>
+                    <td><%= @song.count %></td>
+                </tr>
+              <% end %>
+            <% end %>
+        </tbody>
+
+    </table>
+</div>
